@@ -7,6 +7,10 @@ import { ErrorCard } from './components/ErrorCard/ErrorCard';
 
 function App() { 
   const [weatherData, setWeatherData] = useState<WeatherCardData | null>(null); 
+  const [city, setCity] = useState<string>('Getxo');
+  const onChange = (newCity: string) => {
+    setCity(newCity);
+   };
      const getApiData = async (city: string) => {
         const API_KEY = 'WJCE2UHMWTHJLS9WX4PNSNX9K'
        
@@ -27,13 +31,13 @@ function App() {
        
       }; 
   useEffect(() => {   
-    getApiData('New York');
-  }, []);
+    getApiData(city);
+  }, [city]);
 
   return (
     <>
      <h1>Weather App</h1>
-      <SearchBar />      
+      <SearchBar onChange={onChange} />      
      {
       weatherData      
         ? ( <WeatherCard {...weatherData} /> ) 

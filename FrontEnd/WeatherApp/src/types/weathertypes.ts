@@ -7,3 +7,7 @@ export interface WeatherCardData {
     conditions: string;
   };
 }
+
+export interface SearchBarProps {
+  onChange: (newCity: string) => void;
+}
