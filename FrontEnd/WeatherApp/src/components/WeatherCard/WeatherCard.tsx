@@ -3,10 +3,11 @@ export function WeatherCard(weatherData: WeatherCardData) {
   return (
     <div>
       <h2>{weatherData?.address}</h2>
-      <p>Temperature:{weatherData?.currentConditions?.temp}</p>
-      <p>Wind: {weatherData?.currentConditions?.windspeed} km/h</p>
-      <p>Rain: {weatherData?.currentConditions?.precip}%</p>
-      <p>Condition: {weatherData?.currentConditions?.conditions}</p>
+      <p>Time: {weatherData?.time}</p>
+      <p>Temperature: {weatherData?.temp}</p>
+      <p>Wind: {weatherData?.windspeed} km/h</p>
+      <p>Rain: {weatherData?.precip}%</p>
+      <p>Condition: {weatherData?.conditions}</p>
     </div>
   );
 }

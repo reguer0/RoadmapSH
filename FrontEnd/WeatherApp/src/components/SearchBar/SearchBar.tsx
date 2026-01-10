@@ -14,7 +14,7 @@ export function SearchBar({ onChange }: SearchBarProps) {
   
   return (
     <div>
-      <input type="text" placeholder="Search for a city..." onChange={handleInputChange} />
+      <input type="text"  placeholder="Search for a city..." onChange={handleInputChange} />
       <button type='submit' onClick={handleSearch}>Search</button>
     </div>
   ); 

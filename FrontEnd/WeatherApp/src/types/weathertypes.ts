@@ -1,11 +1,10 @@
 export interface WeatherCardData {
-  address: string;
-  currentConditions: {
+  address: string; 
+    time:string;
     temp: number;
     windspeed: number;
     precip: number;
-    conditions: string;
-  };
+    conditions: string;  
 }
 
 export interface SearchBarProps {
