@@ -1,6 +1,6 @@
 export interface WeatherCardData {
   address: string; 
-    time:string;
+    datetime:string;
     temp: number;
     windspeed: number;
     precip: number;

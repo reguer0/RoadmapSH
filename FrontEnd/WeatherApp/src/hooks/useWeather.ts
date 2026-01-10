@@ -10,10 +10,10 @@ export const useWeather = (city:string) => {
           const data = await response.json();
           console.log(data);
             const daysData: WeatherCardData[] = [];
-            data.days.forEach((e: any) => {
+            data.days.forEach((e: WeatherCardData) => {
             daysData.push({
                 address: data.address,                  
-                    time: e.datetime,
+                    datetime: e.datetime,
                     temp: e.temp,
                     windspeed: e.windspeed,
                     precip: e.precip,
