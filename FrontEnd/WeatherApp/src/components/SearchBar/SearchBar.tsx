@@ -1,5 +1,6 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import type { SearchBarProps } from '../../types/weathertypes';
+import './SearchBar.css';
 
 export function SearchBar({ onChange }: SearchBarProps) {
   const [inputValue, setInputValue] = useState<string>('');
@@ -9,13 +10,26 @@ export function SearchBar({ onChange }: SearchBarProps) {
   };
 
   const handleSearch = () => {
-    onChange(inputValue);
+    if (inputValue.trim()) {
+      onChange(inputValue);
+    }
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
   };
   
   return (
-    <div>
-      <input type="text"  placeholder="Search for a city..." onChange={handleInputChange} />
-      <button type='submit' onClick={handleSearch}>Search</button>
+    <div className="search-bar">
+      <input 
+        type="text" 
+        placeholder="Search for a city..."        
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
+      />
+      <button onClick={handleSearch}>Search</button>
     </div>
   ); 
 }

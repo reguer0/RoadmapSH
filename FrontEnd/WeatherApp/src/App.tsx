@@ -14,18 +14,26 @@ function App() {
 
 
 return (
-  <>
-    <h1>Weather App</h1>
-    <SearchBar onChange={onChange} />
-    
-    {weatherData.length > 0 
-    ? ( weatherData.map((day, index) => (
-        <WeatherCard key={index} {...day} />
-      ))
-      ) 
-    : (  <ErrorCard message="No weather data available" /> )}
-  </>
-)
+    <div className="app">
+      <header className="app-header">
+        <h1>Weather App</h1>
+        <div className="search-container">
+          <SearchBar onChange={onChange} />
+        </div>
+      </header>
+      
+      <main>
+        <div className="weather-container">
+          {weatherData.length > 0 
+            ? ( weatherData.map((day, index) => (
+                <WeatherCard key={index} {...day} />
+              ))
+              ) 
+            : (  <ErrorCard message="No weather data available" /> )}
+        </div>
+      </main>
+    </div>
+  )
 }
 
 export default App
